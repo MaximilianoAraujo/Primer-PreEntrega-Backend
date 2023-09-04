@@ -1,0 +1,92 @@
+[
+	{
+		"prodId": 1,
+		"title": "Slam Dunk - Tomo 1",
+		"description": "Primer tomo de Slam Dunk",
+		"price": 4900,
+		"thumbnail": "Sin imagen",
+		"code": "SD1",
+		"stock": 25
+	},
+	{
+		"prodId": 2,
+		"title": "Slam Dunk - Tomo 2",
+		"description": "Segundo tomo de Slam Dunk",
+		"price": 4900,
+		"thumbnail": "Sin imagen",
+		"code": "SD2",
+		"stock": 25
+	},
+	{
+		"prodId": 3,
+		"title": "Dragon Ball Z - Tomo 1",
+		"description": "Primer tomo de Dragon Ball Z",
+		"price": 4500,
+		"thumbnail": "Sin imagen",
+		"code": "DBZ1",
+		"stock": 25
+	},
+	{
+		"prodId": 4,
+		"title": "Dragon Ball Z - Tomo 2",
+		"description": "Segundo tomo de Dragon Ball Z",
+		"price": 4500,
+		"thumbnail": "Sin imagen",
+		"code": "DBZ2",
+		"stock": 25
+	},
+	{
+		"prodId": 5,
+		"title": "Rurouni Kenshin - Tomo 1",
+		"description": "Primer tomo de Rurouni Kenshin",
+		"price": 5900,
+		"thumbnail": "Sin imagen",
+		"code": "RK1",
+		"stock": 25
+	},
+	{
+		"prodId": 6,
+		"title": "Rurouni Kenshin - Tomo 2",
+		"description": "Segundo tomo de Rurouni Kenshin",
+		"price": 5900,
+		"thumbnail": "Sin imagen",
+		"code": "RK2",
+		"stock": 25
+	},
+	{
+		"prodId": 7,
+		"title": "Death Note - Tomo 1",
+		"description": "Primer tomo de Death Note",
+		"price": 3000,
+		"thumbnail": "Sin imagen",
+		"code": "DN1",
+		"stock": 25
+	},
+	{
+		"prodId": 8,
+		"title": "Death Note - Tomo 2",
+		"description": "Segundo tomo de Death Note",
+		"price": 3000,
+		"thumbnail": "Sin imagen",
+		"code": "DN2",
+		"stock": 25
+	},
+	{
+		"prodId": 9,
+		"title": "Death Note - Tomo 3",
+		"description": "Tercer tomo de Death Note",
+		"price": 3000,
+		"thumbnail": "Sin imagen",
+		"code": "DN3",
+		"stock": 25
+	},
+	{
+		"prodId": 10,
+		"title": "Death Note - Tomo 4",
+		"description": "Cuarto tomo de Death Note",
+		"price": 3000,
+		"thumbnail": "Sin imagen",
+		"code": "DN4",
+		"stock": 25
+	}
+]
