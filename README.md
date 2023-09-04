@@ -1,8 +1,8 @@
 # Product Manager - README
-Este repositorio contiene un código de prueba que implementa una aplicación de gestión de productos utilizando Node.js, Express y FileSystem. La aplicación utiliza una clase llamada ProductManager para realizar operaciones en una lista de productos almacenada en un archivo JSON tales:
+Este repositorio contiene un código de prueba que implementa una aplicación de gestión de productos utilizando Node.js, Express y FileSystem. La aplicación utiliza una clase llamada ProductManager para realizar operaciones en una lista de productos almacenada en un archivo JSON tales como:
 
 - Crear un producto
-- Obetener una lista producto
+- Obtener una lista de productos
 - Obtener un producto en específico
 - Actualizar un producto
 - Eliminar un producto
