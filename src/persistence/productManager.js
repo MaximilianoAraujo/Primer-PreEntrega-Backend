@@ -10,7 +10,7 @@ export class ProductManager {
         return fs.existsSync(this.path)
     }
 
-    // Agregue este metodo para evitar el error "Error: ENOENT, no such file or directory" en caso de que se ejecuten los metodos en un orden distinto al que indica el proceso de testing y asi poder tener siempre un array vacio para poder empezar los procesos.
+    // Metodo para evitar el error "Error: ENOENT, no such file or directory" y asegurar tener un archivo, aunque no contenga data.
     async ensureFileExists() {
         try {
             if (!this.fileExist()) {
@@ -21,18 +21,18 @@ export class ProductManager {
         }
     }
 
-    // Método para agregar un nuevo producto al archivo products.json. Se valida si todos los campos fueron introducidos; si no es asi, muestro un mensaje de que todos los campos son obligatorios. Si todos los campos fueron agregados, se crea el producto y se añade a la lista de productos. A su vez, se valida que no se puedan crear productos con un mismo prodID.
-    async addProduct(title, description, price, thumbnail, code, stock) {
+     // Metodo para crear un nuevo producto. Se crea con un ID autoincrementable. Se valida por ID que el producto a crear no fue creado previamente.
+    async addProduct(title, description,category, price, thumbnail, code, stock, status) {
         try {
             await this.ensureFileExists();
 
-            if (title && description && price && thumbnail && code && stock) {
+            if (title && description && category && price && thumbnail && code && stock && status) {
                 const fileContent = await fs.promises.readFile(this.path, "utf-8");
                 const contentToJson = JSON.parse(fileContent);
                 const confirmCode = contentToJson.some(product => product.code === code);
 
                 if (confirmCode) {
-                    console.log("El código ingresado ya existe dentro de la lista de productos.");
+                    console.log("ERROR! El código ingresado ya existe dentro de la lista de productos.");
                 } else {
 
                     let newId;
@@ -46,24 +46,26 @@ export class ProductManager {
                         prodId: newId,
                         title,
                         description,
+                        category,
                         price,
                         thumbnail,
                         code,
-                        stock
+                        stock,
+                        status,
                     };
                     contentToJson.push(product);
                     await fs.promises.writeFile(this.path, JSON.stringify(contentToJson, null, "\t"));
-                    console.log("El producto se ha agregado exitosamente: ", contentToJson);
+                    return contentToJson
                 }
             } else {
-                console.log("Todos los campos deben ser obligatorios.");
+                console.log("ERROR! Todos los campos deben ser obligatorios.");
             }
         } catch (error) {
             console.log(error.message)
         }
     }
 
-    // Metodo para obtener la lista de productos del archivo products.json
+    // Metodo para obtener la lista de productos.
     async getProducts() {
         try {
             await this.ensureFileExists();
@@ -76,7 +78,7 @@ export class ProductManager {
         }
     }
 
-    // Metodo para obtener un producto en específico de la lista de productos del archivo products.json. Se usa el ID para poder buscar el producto y se valida si el mismo es escontrado o no.
+    // Metodo para obtener por ID un producto en específico de la lista de productos.
     async getProductById(id) {
         try {
             await this.ensureFileExists();
@@ -85,16 +87,16 @@ export class ProductManager {
             const contentToJson = JSON.parse(fileContent);
             let findProd = contentToJson.find((product) => product.prodId === id);
             if (findProd) {
-                console.log("Producto Encontrado: ", findProd);
+                return findProd;
             } else {
-                console.log("Producto No Encontrado");
+                console.log("ERROR! Producto No Encontrado");
             }
         } catch (error) {
             console.log(error.message);
         }
     }
 
-    // Método para actualizar los valores de los productos. Se utiliza el ID para buscar el producto. Luego podemos cambiar cualquiera de los valores del mismo. Se valida si el producto buscado es encontrado o no.
+    // Método para actualizar los valores de los productos. Se utiliza el ID para buscar el producto.
     async updateProduct(id, updatedFields) {
         try {
             await this.ensureFileExists();
@@ -105,19 +107,25 @@ export class ProductManager {
 
             if (productIndex !== -1) {
                 const updatedProduct = { ...contentToJson[productIndex], ...updatedFields };
-                contentToJson[productIndex] = updatedProduct
                 
-                await fs.promises.writeFile(this.path, JSON.stringify(contentToJson, null, "\t"));
-                console.log("Producto actualizado: ", contentToJson);
+                if (updatedProduct.prodId !== contentToJson[productIndex].prodId) {
+                    console.log("El ID no puede ser modificado")
+                    return null
+                } else {
+                    contentToJson[productIndex] = updatedProduct         
+                    await fs.promises.writeFile(this.path, JSON.stringify(contentToJson, null, "\t"));
+                    return updatedProduct;
+                }
             } else {
-                console.log("Producto No Encontrado");
+                console.log("ERROR! Producto No Encontrado");
+                return null
             }
         } catch (error) {
             console.log(error.message);
         }
     }
 
-    // Método para elimitar un producto de la lista. Se uutiliza el ID para buscar el producto. Se valida si el producto a eliminar es encontrado o no.
+    // Método para elimitar un producto de la lista. Se utiliza el ID para buscar el producto.
     async deleteProduct(id) {
         try {
             await this.ensureFileExists();
@@ -129,9 +137,10 @@ export class ProductManager {
             if (prodIndex !== -1) {
                 contentToJson.splice(prodIndex, 1);
                 await fs.promises.writeFile(this.path, JSON.stringify(contentToJson, null, "\t"));
-                console.log("Producto eliminado de la lista. Lista Actualizada: ", contentToJson);
+                return contentToJson
             } else {
-                console.log("Producto No Encontrado");
+                console.log("ERROR! Producto No Encontrado");
+                return null
             }
         } catch (error) {
             console.log(error.message)

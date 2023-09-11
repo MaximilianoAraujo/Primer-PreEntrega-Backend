@@ -3,90 +3,132 @@
 		"prodId": 1,
 		"title": "Slam Dunk - Tomo 1",
 		"description": "Primer tomo de Slam Dunk",
+		"category": "Deportes - Comedia",
 		"price": 4900,
 		"thumbnail": "Sin imagen",
 		"code": "SD1",
-		"stock": 25
+		"stock": 25,
+		"status": true
 	},
 	{
 		"prodId": 2,
 		"title": "Slam Dunk - Tomo 2",
 		"description": "Segundo tomo de Slam Dunk",
+		"category": "Deportes - Comedia",
 		"price": 4900,
 		"thumbnail": "Sin imagen",
 		"code": "SD2",
-		"stock": 25
+		"stock": 25,
+		"status": true
 	},
 	{
 		"prodId": 3,
 		"title": "Dragon Ball Z - Tomo 1",
 		"description": "Primer tomo de Dragon Ball Z",
+		"category": "Arte Marciales - Fantasia",
 		"price": 4500,
 		"thumbnail": "Sin imagen",
 		"code": "DBZ1",
-		"stock": 25
+		"stock": 25,
+		"status": true
 	},
 	{
 		"prodId": 4,
 		"title": "Dragon Ball Z - Tomo 2",
 		"description": "Segundo tomo de Dragon Ball Z",
+		"category": "Arte Marciales - Fantasia",
 		"price": 4500,
 		"thumbnail": "Sin imagen",
 		"code": "DBZ2",
-		"stock": 25
+		"stock": 25,
+		"status": true
 	},
 	{
 		"prodId": 5,
 		"title": "Rurouni Kenshin - Tomo 1",
 		"description": "Primer tomo de Rurouni Kenshin",
+		"category": "Arte Marciales - Comedia",
 		"price": 5900,
 		"thumbnail": "Sin imagen",
 		"code": "RK1",
-		"stock": 25
+		"stock": 25,
+		"status": true
 	},
 	{
 		"prodId": 6,
 		"title": "Rurouni Kenshin - Tomo 2",
 		"description": "Segundo tomo de Rurouni Kenshin",
+		"category": "Arte Marciales - Comedia",
 		"price": 5900,
 		"thumbnail": "Sin imagen",
 		"code": "RK2",
-		"stock": 25
+		"stock": 25,
+		"status": true
 	},
 	{
 		"prodId": 7,
 		"title": "Death Note - Tomo 1",
 		"description": "Primer tomo de Death Note",
+		"category": "Misterio - Sobrenatural",
 		"price": 3000,
 		"thumbnail": "Sin imagen",
 		"code": "DN1",
-		"stock": 25
+		"stock": 25,
+		"status": true
 	},
 	{
 		"prodId": 8,
 		"title": "Death Note - Tomo 2",
 		"description": "Segundo tomo de Death Note",
+		"category": "Misterio - Sobrenatural",
 		"price": 3000,
 		"thumbnail": "Sin imagen",
 		"code": "DN2",
-		"stock": 25
+		"stock": 25,
+		"status": true
 	},
 	{
 		"prodId": 9,
 		"title": "Death Note - Tomo 3",
 		"description": "Tercer tomo de Death Note",
+		"category": "Misterio - Sobrenatural",
 		"price": 3000,
 		"thumbnail": "Sin imagen",
 		"code": "DN3",
-		"stock": 25
+		"stock": 25,
+		"status": true
 	},
 	{
 		"prodId": 10,
 		"title": "Death Note - Tomo 4",
 		"description": "Cuarto tomo de Death Note",
+		"category": "Misterio - Sobrenatural",
 		"price": 3000,
 		"thumbnail": "Sin imagen",
 		"code": "DN4",
-		"stock": 25
+		"stock": 25,
+		"status": true
+	},
+	{
+		"prodId": 11,
+		"title": "Another - Tomo 1",
+		"description": "Primer tomo de Another",
+		"category": "Suspenso - Terror",
+		"price": 2500,
+		"thumbnail": "Sin imagen",
+		"code": "A1",
+		"stock": 25,
+		"status": true
+	},
+	{
+		"prodId": 12,
+		"title": "Another - Tomo 2",
+		"description": "Segundo tomo de Another",
+		"category": "Suspenso - Terror",
+		"price": 2500,
+		"thumbnail": "Sin imagen",
+		"code": "A2",
+		"stock": 25,
+		"status": true
 	}
 ]
