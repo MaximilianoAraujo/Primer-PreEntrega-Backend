@@ -3,7 +3,7 @@ import { cartService } from "../persistence/index.js";
 
 const router = Router()
 
-// Se configura una ruta POST que crea unn uevo carrito.
+// Se configura una ruta POST que crea un nuevo carrito.
 router.post("/", async (req,res) =>{
     try {
         const newCart = await cartService.addCart()

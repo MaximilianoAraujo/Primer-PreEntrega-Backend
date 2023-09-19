@@ -1,0 +1,43 @@
+<h1>Administrar productos</h1>
+
+<div class="containerProductsRT">
+    <div class="containerForm">
+        <h2>Añadir Nuevo Producto</h2>
+        {{!-- Se comentó lo que se quizo usar para la subida de imagenes --}}
+        <form class="form" id="formProdCreation" {{!-- enctype="multipart/form-data" --}}>
+            <input class="inputForm" type="text" placeholder="Nombre del Producto" name="title">
+            <br></br>
+
+            <input class="inputForm" type="text" placeholder="Descripción del Producto" name="description">
+            <br></br>
+
+            <input class="inputForm" type="text" placeholder="Categoria del Producto" name="category">
+            <br></br>
+
+            <input class="inputForm" type="number" placeholder="Precio del Producto" name="price">
+            <br></br>
+
+            {{!-- <input class="inputForm" type="file" name="thumbnail"> --}}
+            <input class="inputForm" type="text" placeholder="String - Sin Imagen" name="thumbnail">
+            <br></br>
+
+            <input class="inputForm" type="text" placeholder="Código del Producto" name="code">
+            <br></br>
+
+            <input class="inputForm" type="text" placeholder="Stock del Producto" name="stock">
+            <br></br>
+
+            <button class="addProd" type="submit">Añadir Producto</button>
+        </form>
+
+        <p class="message" id="infoMessage"></p>
+    </div>
+
+    <div class="divProdsRT">
+        <h2>Lista completa en tiempo real</h2>
+        <ul class="ulProds" id="productList"> </ul>
+    </div>
+</div>
+
+<script src="socket.io/socket.io.js"></script>
+<script src="js/realTimeProducts.js"></script>

@@ -1,0 +1,79 @@
+.containerProductsRT {
+    display: flex;
+}
+
+.containerForm, .divProdsRT {
+    flex: 1;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 30%;
+    background: rgb(151, 192, 240);
+}
+
+.divProdsRT{
+    max-width: none;
+}
+
+.ulProds{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 30%;
+}
+
+.inputForm {
+    padding: 0.8em;
+    font-weight: 900;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.addProd{
+    display: block;
+    margin: 0.5em auto;
+    padding: 0.5em 2em;
+    border: 2px solid black;
+    border-radius: 40px;
+    background-color: rgb(103, 167, 112);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.message{
+    font-size: 1.75em;
+    color: rgb(19, 52, 161);
+    font-weight: bolder;
+    text-align: center;
+}
+
+.list {
+    margin: 0.3em 1em;
+    font-size: large;
+    text-align: center;
+    border: rgb(66, 66, 66) solid 2px;
+    border-radius: 20px;
+    min-width: 23%;
+    background: rgb(206, 225, 247);
+    min-width: 28%;
+}
+
+.delProd{
+    display: block;
+    margin: 0.5em auto;
+    padding: 0.5em 2em;
+    border: 2px solid black;
+    border-radius: 40px;
+    background-color: rgb(255, 143, 143);
+    font-weight: bold;
+    cursor: pointer;
+}

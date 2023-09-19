@@ -1,0 +1,16 @@
+body {
+    background: rgb(123, 177, 238);
+}
+
+a {
+    margin: 0 1.5em;
+    font-size: 2em;
+    font-weight: bolder;
+    color: black;
+}
+
+h1 {
+    font-size: 3.5em;
+    text-align: center;
+}
+

@@ -22,11 +22,11 @@ export class ProductManager {
     }
 
      // Metodo para crear un nuevo producto. Se crea con un ID autoincrementable. Se valida por ID que el producto a crear no fue creado previamente.
-    async addProduct(title, description,category, price, thumbnail, code, stock, status) {
+    async addProduct(title, description,category, price, thumbnail, code, stock) {
         try {
             await this.ensureFileExists();
 
-            if (title && description && category && price && thumbnail && code && stock && status) {
+            if (title && description && category && price && thumbnail && code && stock) {
                 const fileContent = await fs.promises.readFile(this.path, "utf-8");
                 const contentToJson = JSON.parse(fileContent);
                 const confirmCode = contentToJson.some(product => product.code === code);
@@ -51,7 +51,7 @@ export class ProductManager {
                         thumbnail,
                         code,
                         stock,
-                        status,
+                        status: true,
                     };
                     contentToJson.push(product);
                     await fs.promises.writeFile(this.path, JSON.stringify(contentToJson, null, "\t"));
@@ -59,6 +59,7 @@ export class ProductManager {
                 }
             } else {
                 console.log("ERROR! Todos los campos deben ser obligatorios.");
+                return null
             }
         } catch (error) {
             console.log(error.message)

@@ -38,7 +38,7 @@ router.get("/:pid", async (req,res) => {
 router.post("/", async (req,res)=>{
     try {
         const newProdBody = req.body
-        const NewProd = await productService.addProduct(newProdBody.title, newProdBody.description, newProdBody.category, newProdBody.price, newProdBody.thumbnail, newProdBody.code, newProdBody.stock, newProdBody.status)
+        const NewProd = await productService.addProduct(newProdBody.title, newProdBody.description, newProdBody.category, newProdBody.price, newProdBody.thumbnail, newProdBody.code, newProdBody.stock)
         if (NewProd) {
             res.status(201).json({message:"Producto agregado exitosamente!"})
         } else {

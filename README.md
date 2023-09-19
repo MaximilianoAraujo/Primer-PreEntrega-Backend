@@ -1,65 +1,54 @@
-# Gestión de Productos y Carritos - README
-Este proyecto es una aplicación de gestión de productos y carritos desarrollada en Node.js y Express. La aplicación permite realizar operaciones como agregar, obtener, actualizar y eliminar productos, así como crear y modificar carritos de compras. Los datos de productos y carritos se almacenan en archivos JSON para su persistencia.
+# Gestor de Carritos y Productos
+Este proyecto implementa un gestor de carritos y productos en JavaScript utilizando Node.js y Express. Permite realizar las siguientes acciones:
+
+* Crear un nuevo carrito.
+* Obtener un carrito por su ID.
+* Añadir productos a un carrito existente.
+* Añadir nuevos productos a la lista de productos.
+* Obtener la lista de productos.
+* Obtener un producto por su ID.
+* Actualizar la información de un producto.
+* Eliminar un producto de la lista.
 
 
+## Estructura de los Datos
 
-## Funcionalidades Principales
+### Carritos
+Los carritos se almacenan en un archivo JSON en la carpeta files. Cada carrito tiene un ID único y una lista de productos con sus ID y cantidades.
 
-- **Agregar un Producto:** Puedes agregar un nuevo producto especificando detalles como título, descripción, categoría, precio, imagen, código, stock y estado.
+### Productos
+Los productos se almacenan en otro archivo JSON en la carpeta files. Cada producto tiene un ID único, título, descripción, categoría, precio, código, stock y estado.
 
-- **Obtener una Lista de Productos:** Puedes obtener una lista completa de todos los productos disponibles.
+## Uso del Código
+El código se organiza en módulos para la gestión de productos y carritos. Puedes interactuar con él a través de las rutas API o las vistas en tiempo real.
 
-- **Obtener un Producto por su ID:** Puedes obtener información detallada de un producto específico proporcionando su ID.
+### Rutas API
+* /api/products: Permite realizar operaciones en la lista de productos.
+* /api/carts: Permite crear nuevos carritos y añadir productos a ellos.
 
-- **Actualizar un Producto:** Puedes actualizar los detalles de un producto existente utilizando su ID. Nota importante: No es posible modificar el ID de un producto.
+### Rutas de Vistas en Tiempo Real
+* /: Muestra la lista completa de productos.
+* /realtimeproducts: Permite añadir o eliminar productos en tiempo real.
 
-- **Eliminar un Producto:** Puedes eliminar un producto por su ID.
+## Uso de Socket.io
+Se utiliza Socket.io para actualizar en tiempo real la lista de productos cuando se añade o elimina un producto.
 
-- **Crear un Carrito de Compras:** Puedes crear un nuevo carrito de compras, que inicialmente estará vacío.
-
-- **Obtener un Carrito por su ID:** Puedes obtener información sobre un carrito específico proporcionando su ID.
-
-- **Agregar Productos a un Carrito:** Puedes agregar productos a un carrito especificando tanto el ID del carrito como el ID del producto a agregar. Si el producto ya está en el carrito, la cantidad se incrementará en lugar de agregar un nuevo elemento.
-
-
+## Configuración de Handlebars
+Las vistas se generan utilizando el motor de plantillas Handlebars para una experiencia de usuario más amigable.
 
 ## Requisitos
-
-- **Node.js:** Asegúrate de tener Node.js instalado en tu sistema.
-
-
+Asegúrate de tener Node.js instalado en tu sistema antes de ejecutar el proyecto.
 
 ## Instalación
+1. Clona este repositorio en tu máquina local.
+2. Abre una terminal en la carpeta raíz del proyecto.
+3. Ejecuta el siguiente comando para instalar las dependencias:
+* npm install
 
-1. Clona o descarga el repositorio en tu máquina local.
-2. Abre una terminal y navega hasta la carpeta raíz del proyecto.
-3. Ejecuta `npm install` para instalar las dependencias del proyecto.
+## Ejecución
+Para ejecutar la aplicación, utiliza el siguiente comando:
 
+* npm start
 
+La aplicación estará disponible en http://localhost:8080.
 
-## Uso
-
-1. Inicia la aplicación ejecutando `npm start` en la terminal.
-2. La aplicación estará disponible en `http://localhost:8080`.
-3. Utiliza herramientas como Postman o tu navegador para interactuar con la API.
-4. Las rutas y métodos disponibles se describen a continuación:
-
-
-
-### Rutas de la API
-
-- **GET `/api/products`:** Obtiene una lista de productos. Puedes especificar un parámetro `limit` para limitar la cantidad de productos devueltos.
-
-- **GET `/api/products/:pid`:** Obtiene un producto específico por su ID.
-
-- **POST `/api/products`:** Agrega un nuevo producto. Debes proporcionar los detalles del producto en el cuerpo de la solicitud.
-
-- **PUT `/api/products/:pid`:** Actualiza un producto existente por su ID. Puedes especificar los campos a actualizar en el cuerpo de la solicitud.
-
-- **DELETE `/api/products/:pid`:** Elimina un producto por su ID.
-
-- **POST `/api/carts`:** Crea un nuevo carrito de compras.
-
-- **GET `/api/carts/:cid`:** Obtiene un carrito de compras por su ID.
-
-- **POST `/api/carts/:cid/product/:pid`:** Agrega un producto a un carrito de compras especificando tanto el ID del carrito como el ID del producto.

@@ -130,5 +130,16 @@
 		"code": "A2",
 		"stock": 25,
 		"status": true
+	},
+	{
+		"prodId": 13,
+		"title": "Another - Tomo 3",
+		"description": "Tercer tomo de Another",
+		"category": "Suspenso - Terror",
+		"price": 2500,
+		"thumbnail": "Sin imagen",
+		"code": "A3",
+		"stock": 25,
+		"status": true
 	}
 ]
